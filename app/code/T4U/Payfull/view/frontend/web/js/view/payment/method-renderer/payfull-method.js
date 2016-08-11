@@ -55,6 +55,6 @@ function getPayfullPaymentCode() {
 }
 
 function getCardBrandAndInstallmentsList() {
-    alert('xxxx');
+    alert('yyy');
 }
 
