@@ -6,11 +6,10 @@
  * @package     Payfull
  * @author      Mohammad Alabed
  * @copyright   payfull (http://payfull.com)
- * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @license     GPL
  */
 
 namespace T4U\Payfull\Model;
-require(dirname(__FILE__) . '/Payfull.php');
 
 class Payment extends \Magento\Payment\Model\Method\Cc
 {
@@ -101,9 +100,9 @@ class Payment extends \Magento\Payment\Model\Method\Cc
                 ]
             ];
 
-            $charge = \Payfull\Charge::create($requestData);
+            $charge = \Payfull\Payfull::sale($requestData);
             $payment
-                ->setTransactionId($charge->id)
+                ->setTransactionId($charge['id'])
                 ->setIsTransactionClosed(0);
 
         } catch (\Exception $e) {
@@ -128,7 +127,7 @@ class Payment extends \Magento\Payment\Model\Method\Cc
         $transactionId = $payment->getParentTransactionId();
 
         try {
-            \Payfull\Charge::retrieve($transactionId)->refund(['amount' => $amount * 100]);
+            $charge = \Payfull\Payfull::refund($transactionId, ['amount' => $amount * 100]);
         } catch (\Exception $e) {
             $this->debugData(['transaction_id' => $transactionId, 'exception' => $e->getMessage()]);
             $this->_logger->error(__('Payment refunding error.'));

@@ -6,7 +6,7 @@
  * @package     Payfull
  * @author      Mohammad Alabed
  * @copyright   payfull (http://payfull.com)
- * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @license     GPL
  */
 
 namespace T4U\Payfull\Model\Source;
