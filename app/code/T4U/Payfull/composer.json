@@ -1,0 +1,20 @@
+{
+    "name": "t4u/payfull",
+    "description": "Payfull integration for Magento 2",
+    "type": "magento2-module",
+    "version": "dev-master",
+    "license": [
+        "GPL"
+    ],
+    "require": {
+        "payfull/payfull-php": "1.*"
+    },
+    "extra": {
+        "map": [
+            [
+                "*",
+                "T4U/Payfull"
+            ]
+        ]
+    }
+}

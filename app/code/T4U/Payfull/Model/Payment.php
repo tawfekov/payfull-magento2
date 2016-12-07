@@ -48,21 +48,6 @@ class Payment extends \Magento\Payment\Model\Method\Cc
         \Payfull\Payfull $payfull,
         array $data = array()
     ) {
-        parent::__construct(
-            $context,
-            $registry,
-            $extensionFactory,
-            $customAttributeFactory,
-            $paymentData,
-            $scopeConfig,
-            $logger,
-            $moduleList,
-            $localeDate,
-            null,
-            null,
-            $data
-        );
-
         $this->_countryFactory = $countryFactory;
 
         $this->_payfullApi = $payfull;

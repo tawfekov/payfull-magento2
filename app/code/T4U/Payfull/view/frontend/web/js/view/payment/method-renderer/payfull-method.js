@@ -55,7 +55,7 @@ function getPayfullPaymentCode() {
 }
 
 function getCardBrandAndInstallmentsList() {
-    var test = "<?php echo $this->_scopeConfig->getValue('t4u/payfull/use_installment', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);?>";
+    var test = "";
     alert(test);
 }
 

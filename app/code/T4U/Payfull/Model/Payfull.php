@@ -1,39 +1,52 @@
 <?php
-
 namespace Payfull;
 
 class Payfull
 {
     protected $_config;
 
-    public static $apiUsername;
-    public static $apiPassword;
-    public static $apiEndpoint;
-    public static $apiUseInstallment;
-    public static $apiUse3dSecure;
+    protected $apiUsername;
+    protected $apiPassword;
+    protected $apiEndpoint;
+    protected $apiUseInstallment;
+    protected $apiUse3dSecure;
 
-    public static function setApiUsername($apiUsername)
+    public function setApiUsername($apiUsername)
     {
-        self::$apiUsername = $apiUsername;
+        $this->apiUsername = $apiUsername;
     }
 
-    public static function setApiPassword($apiPassword)
+    public function setApiPassword($apiPassword)
     {
-        self::$apiPassword = $apiPassword;
+        $this->apiPassword = $apiPassword;
     }
 
-    public static function setApiEndpoint($apiEndpoint)
+    public function setApiEndpoint($apiEndpoint)
     {
-        self::$apiEndpoint = $apiEndpoint;
+        $this->apiEndpoint = $apiEndpoint;
     }
 
-    public static function setApiUseInstallment($apiUseInstallment)
+    public function setApiUseInstallment($apiUseInstallment)
     {
-        self::$apiUseInstallment = $apiUseInstallment;
+        $this->apiUseInstallment = $apiUseInstallment;
     }
 
-    public static function setApiUse3dSecure($apiUse3dSecure)
+    public function setApiUse3dSecure($apiUse3dSecure)
     {
-        self::$apiUse3dSecure = $apiUse3dSecure;
+        $this->apiUse3dSecure = $apiUse3dSecure;
+    }
+
+    public static function post($requestData)
+    {
+        $charge       = [];
+        $charge['id'] = time();
+        return $charge;
+    }
+
+    public static function refund($transactionId, $amount)
+    {
+        $charge       = [];
+        $charge['id'] = time();
+        return $charge;
     }
 }

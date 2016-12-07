@@ -41,8 +41,16 @@
                     <label>Enable Installment</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="use_extra_installment" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable Extra Installment</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
                 <field id="use3d_secure" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Enable 3D Secure</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="use_bkm" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable BKM Express</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
