@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="payfull" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Payfull Payment Configuration </label>
+                <comment><![CDATA[ <p><img src="https://payfull.com/sites/all/themes/payfull_theme/images/logo.png" alt="logo" /></p> <p>Accept credit/debit cards  in your Magento store. No setup or monthly fees and your customers never leave your store to complete the purchase.</p>]]></comment>
+
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="cctypes" translate="label" type="multiselect" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Credit Card Types</label>
+                    <source_model>Payfull\Pay\Model\Source\Cctype</source_model>
+                </field>
+                <field id="payment_action" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Payment Action</label>
+                    <source_model>Payfull\Pay\Model\Source\PaymentAction</source_model>
+                </field>
+                <field id="endpoint" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>API EndPoint</label>
+                </field>
+
+                <field id="api_username" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>API username</label>
+                </field>
+
+                <field id="api_key" translate="label" type="password" sortOrder="12" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>API Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+
+                <field id="bkm_status" translate="label" type="select" sortOrder="16" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Enable BKM Express</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="threedsecure_status" translate="label" type="select" sortOrder="17" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Enable 3D Secure</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="installment_status" translate="label" type="select" sortOrder="18" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Enable Installment</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="extra_installment_status" translate="label" type="select" sortOrder="19" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Enable Extra Installment</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="order_status" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>New Order Status</label>
+                    <source_model>Payfull\Pay\Model\Config\Source\Order\Status\Pendingpayment</source_model>
+                </field>
+
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="41" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="currency" translate="label" type="select" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Accepted Currency</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+                </field>
+                <field id="instructions" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Instructions</label>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Sort Order</label>
+                    <frontend_class>validate-number</frontend_class>
+                </field>
+
+                <field id="min_order_total" translate="label" type="text" sortOrder="98" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Minimum Order Total</label>
+                </field>
+                <field id="max_order_total" translate="label" type="text" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Maximum Order Total</label>
+                    <comment>Leave empty to disable limit</comment>
+                </field>
+            </group>
+            <!-- payment-group -->
+        </section>
+    </system>
+</config>

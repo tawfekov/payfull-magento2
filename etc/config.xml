@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+            <payfull>
+                <active>1</active>
+                <title>Payfull Payment</title>
+                <endpoint>https://dev.payfull.com/integration/api/v1</endpoint>
+                <api_username>api_merch</api_username>
+                <api_key>pass123</api_key>
+                <bkm_status>0</bkm_status>
+                <threedsecure_status>0</threedsecure_status>
+                <installment_status>0</installment_status>
+                <extra_installment_status>0</extra_installment_status>
+                <order_status>pending_payment</order_status>
+                <instructions>Instruction.</instructions>
+                <payment_action>true</payment_action>
+                <model>Payfull\Pay\Model\Payfull</model>
+                <currency>USD</currency>
+                <cctypes>VI,MC</cctypes>
+                <payment_action>authorize</payment_action>
+            </payfull>
+            <!-- payment-config -->
+        </payment>
+    </default>
+</config>
